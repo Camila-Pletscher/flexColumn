@@ -1,0 +1,12 @@
+<mvc:View controllerName="com.proy.flexcolumn.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:f="sap.f">
+        <f:FlexibleColumnLayout id="flexibleColumnLayout" backgroundDesign="Solid" stateChange="onStateChanged" layout="{/layout}">
+            <f:beginColumnPages>
+                <mvc:XMLView id="beginView" viewName="com.proy.flexcolumn.view.List"/>
+            </f:beginColumnPages>
+            <f:midColumnPages>
+			<mvc:XMLView id="detailView" viewName="com.proy.flexcolumn.view.Detail"/>
+		</f:midColumnPages>
+        </f:FlexibleColumnLayout>
+</mvc:View>

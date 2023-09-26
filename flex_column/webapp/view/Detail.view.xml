@@ -1,0 +1,72 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.proy.flexcolumn.controller.Detail"
+    xmlns:u="sap.uxap"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout">
+    <u:ObjectPageLayout >
+        <u:headerTitle>
+            <u:ObjectPageDynamicHeaderTitle >
+                <u:snappedHeading>
+                    <FlexBox fitContainer="true" alignItems="Center">
+                        <Avatar src="{productsModel>/ProductPicUrl}" class="sapUiTinyMarginEnd" />
+                        <Title text="{productsModel>/ProductId}"/>
+
+                    </FlexBox>
+                </u:snappedHeading>
+                <u:snappedContent>
+                    <Text text="{productsModel>/Name}"/>
+                </u:snappedContent>
+                <u:expandedContent>
+                    <Title text="{productsModel>/ProductId}"></Title>
+                </u:expandedContent>
+            </u:ObjectPageDynamicHeaderTitle>
+        </u:headerTitle>
+
+        <u:headerContent>
+            <l:VerticalLayout enabled="true">
+                <Avatar src="{productsModel>ProductPicUrl}" class="sapUiTinyMarginEnd"/>
+            </l:VerticalLayout>
+            <l:VerticalLayout enabled="true">
+                <Label text="{productsModel>Category}" />
+                <Label text="{productsModel>MainCategory}" />
+                <Label text="{productsModel>SupplierName}" />
+            </l:VerticalLayout>
+        </u:headerContent>
+
+        <u:sections>
+            <u:ObjectPageSection >
+                <u:subSections>
+                    <u:ObjectPageSubSection title="Descripción">
+                        <u:blocks>
+                            <Text text="{productsModel>Description}" />
+                        </u:blocks>
+                    </u:ObjectPageSubSection>
+                </u:subSections>
+                <u:subSections>
+                    <u:ObjectPageSubSection title="Peso">
+                        <u:blocks>
+                            <Text text="{productsModel>WeightMeasure} {productsModel>WeightUnit}" />
+                        </u:blocks>
+                    </u:ObjectPageSubSection>
+                </u:subSections>
+                <u:subSections>
+                    <u:ObjectPageSubSection title="Precio">
+                        <u:blocks>
+                            <Text text="{productsModel>Price} {productsModel>CurrencyCode}" />
+                        </u:blocks>
+                    </u:ObjectPageSubSection>
+                </u:subSections>
+                <u:subSections>
+                    <u:ObjectPageSubSection title="Fecha de venta">
+                        <u:blocks>
+                            <Text text="{productsModel>DateOfSale}" />
+                        </u:blocks>
+                    </u:ObjectPageSubSection>
+                </u:subSections>
+            </u:ObjectPageSection>
+        </u:sections>
+
+
+    </u:ObjectPageLayout>
+</mvc:View>
